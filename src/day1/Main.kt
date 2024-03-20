@@ -1,4 +1,4 @@
-package `01_ets`
+package day1
 
 fun main() {
 
