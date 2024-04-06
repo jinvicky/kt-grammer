@@ -16,18 +16,28 @@ fun buildString2 (
     return sb.toString()
 }
 
+
 fun main() {
     val s = buildString {
         it.append("Hello, ")
         it.append("World!")
     }
 
-    println(s)
+//    println(s)
 
     val s2 = buildString2 {
         this.append("Hello,")
         append("jinvicky")
     }
 
-    println(s2)
+//    println(s2)
+
+    val appendExcl : StringBuilder.() -> Unit = {
+        this.append("!")
+    }
+
+    val stringBuilder= StringBuilder("Hi")
+    stringBuilder.appendExcl() // 확장함수처럼 호출한다.
+    println(stringBuilder)
+    println(buildString(appendExcl)) //함수를 인자로 넘긴다.
 }
